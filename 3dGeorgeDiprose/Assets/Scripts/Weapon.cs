@@ -44,7 +44,8 @@ public class Weapon : MonoBehaviour
         if (ammo.GetAmmoAmount(ammoType) > 0 )
         {
             ProcessRaycast();
-            PlayMuzzleFlash();
+            muzzleFlash.Play();
+            //PlayMuzzleFlash();
             ammo.ReduceAmmo(ammoType);
         }
         yield return new WaitForSeconds(rateOfFire);
@@ -57,6 +58,7 @@ public class Weapon : MonoBehaviour
     private void PlayMuzzleFlash()
     {
         muzzleFlash.Play();
+        
            
     }
 
